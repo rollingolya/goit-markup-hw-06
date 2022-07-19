@@ -396,6 +396,7 @@ cursor: pointer;
 background-color: #FFFFFF;
 border: 1px solid rgba(33, 33, 33, 0.2);
 border-radius: 4px;
+outline: transparent;
 
 transition-property: border-color, outline;
 transition-duration: 250ms;
@@ -408,7 +409,6 @@ fill: #2196F3;
 
 input:focus,
 .form-field:focus {
-    outline: none;
     border-color: #2196F3;
 }
 
@@ -453,6 +453,7 @@ textarea {
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    outline: transparent;
 }
 
 textarea::placeholder {
