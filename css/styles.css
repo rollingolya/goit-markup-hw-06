@@ -14,6 +14,21 @@ body {
 font-family: var(--main-font), sans-serif;
 font-family: 'Roboto', 'Raleway', sans-serif;}
 
+/* visually-hidden hine elements */
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
 /* Сітка із застосуванням flex-box */
 
 .card-set {
@@ -311,6 +326,8 @@ background-color: #188CE8; }
     left: 50%;
     transform: translate(-50%, -50%);
 
+    padding: 40px;
+
     width: 528px;
     height: 581px;
 
@@ -340,9 +357,11 @@ background-color: #188CE8; }
     cursor: pointer;
 }
 
-/* Форма */
+/* Форма модального вікна*/
 
 .form-call-action {
+    margin-bottom: 30px;
+
     font-size: 20px;
     line-height: 1.15;
     text-align: center;
@@ -350,12 +369,23 @@ background-color: #188CE8; }
 }
 
 .order-form {
-
     display: flex;
     flex-direction: column;
-    padding: 40px;
-
 }
+
+.form-item {
+    margin-bottom: 28px;
+}
+
+.form-text{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+
+    color: #757575;
+}
+
 
 textarea {
     box-sizing: content-box;
@@ -376,7 +406,20 @@ textarea {
     height: 138px;
 } 
 
+/* .label-comment::placeholder {
+    display: inline-flex;
+    margin-top: 12px;
+} */
+
 .btn-form {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    margin: auto;
+    padding: 10px 55px;
+
     width: 200px;
     height: 50px;
 
@@ -401,7 +444,53 @@ textarea {
     background-color: #188CE8;
 }
 
+.form-checkbox {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+   
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
 
+    color: #757575;
+}
+
+.form-checkbox-link {
+    color: rgba(33, 150, 243, 1);
+    text-decoration: underline;
+}
+
+.form-checkbox-custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 15px;
+
+    background-color: #FFFFFF;
+    border: 2px solid #212121;
+    border-radius: 2px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-checkbox-input:checked + .form-checkbox-custom-checkbox {
+    background-color: #2196F3;
+    border-color: transparent;
+}
+
+.form-checkbox-icon {
+    fill: #FFFFFF;
+    
+}
 
 /* Секция property */
 
@@ -905,7 +994,17 @@ margin-left: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 
+    color: #FFFFFF;
     background-color: rgba(33, 150, 243, 0);
+}
+
+.follow-form-field::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .follow-form-bth {
