@@ -358,8 +358,14 @@ background-color: #188CE8; }
     fill: currentColor;
 }
 
+.modal-icon {
+    fill: #000000;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal-close-btn:hover,
-.modal-close-btn:focus + svg {
+.modal-close-btn:focus > .modal-icon {
     fill: #2196F3;
 }
 
@@ -381,12 +387,29 @@ background-color: #188CE8; }
 
 .form-group input {
 padding: 12px 16px;
+padding-left: 40px;
 
 width: 448px;
 height: 40px;
 
+cursor: pointer;
+background-color: #FFFFFF;
 border: 1px solid rgba(33, 33, 33, 0.2);
 border-radius: 4px;
+
+transition-property: border-color, outline;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:focus + .form-icon {
+fill: #2196F3;
+}
+
+input:focus,
+.form-field:focus {
+    outline: none;
+    border-color: #2196F3;
 }
 
 .form-text{
@@ -417,22 +440,7 @@ border-radius: 4px;
     top: 50%;
 
     margin-left: 14px;
-    fill: currentColor;
-}
-
-.form-field {
-    cursor: pointer;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-
-    transition-property: border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-field:focus,
-.form-field:hover + svg {
-border-color: #2196F3;
-outline: none;
+    fill: #000000;
 }
 
 textarea {
@@ -448,6 +456,7 @@ textarea {
 }
 
 textarea::placeholder {
+
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -1000,9 +1009,7 @@ justify-content: center;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
 
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .call-to-action-link:hover,
@@ -1150,7 +1157,7 @@ margin-right: 0px;
 .button-text:hover,
 .button-text:focus {
 color: #FFFFFF; 
-background: #2196F3;
+background-color: #2196F3;
 box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12); 
 }
 
